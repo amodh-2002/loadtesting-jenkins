@@ -8,4 +8,3 @@ scenarios:
   quick-test:
     requests:
     - http://blazedemo.com
-
