@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building the project on branch: ${env.BRANCH_NAME}"
+                echo "Building the projects on branch: ${env.BRANCH_NAME}"
                 // Add your build steps here
             }
         }
