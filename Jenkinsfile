@@ -36,32 +36,57 @@
 //     }
 // }
 
+// pipeline {
+//     agent any
+
+//     parameters {
+//         choice(name: 'ENVIRONMENT', choices: ['staging', 'production', 'development'], description: 'Select the environment to deploy to')
+//         string(name: 'VERSION', defaultValue: 'latest', description: 'Enter the version to deploy')
+//     }
+
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo "Building version: ${params.VERSION}"
+//                 // Your build steps go here
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo "Running tests for environment: ${params.ENVIRONMENT}"
+//                 // Your test steps go here
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo "Deploying version: ${params.VERSION} to ${params.ENVIRONMENT} environment"
+//                 // Your deployment steps go here
+//             }
+//         }
+//     }
+// }
+
 pipeline {
     agent any
-
-    parameters {
-        choice(name: 'ENVIRONMENT', choices: ['staging', 'production', 'development'], description: 'Select the environment to deploy to')
-        string(name: 'VERSION', defaultValue: 'latest', description: 'Enter the version to deploy')
-    }
-
     stages {
         stage('Build') {
             steps {
-                echo "Building version: ${params.VERSION}"
-                // Your build steps go here
+                echo 'Building project...'
+                // Build steps here
             }
         }
         stage('Test') {
             steps {
-                echo "Running tests for environment: ${params.ENVIRONMENT}"
-                // Your test steps go here
+                echo 'Running tests...'
+                // Test steps here
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deploying version: ${params.VERSION} to ${params.ENVIRONMENT} environment"
-                // Your deployment steps go here
+                echo 'Deploying project...'
+                // Deployment steps here
             }
         }
     }
 }
+
