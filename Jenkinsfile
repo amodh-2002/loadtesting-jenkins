@@ -41,19 +41,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building project...'
+                echo 'Building project... from TRX branch'
                 // Build steps here
             }
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                echo 'Running tests... from TRX branch'
                 // Test steps here
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying project...'
+                echo 'Deploying project... from TRX branch'
                 // Deployment steps here
             }
         }
