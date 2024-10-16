@@ -2,14 +2,36 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                // Corrected syntax for echo command
-                sh 'echo "Hello from Jenkinsfile"'
-                
-                // Corrected filename in the second shell command
-                sh 'bzt execution.yml'
+                echo "Building the project on branch: ${env.BRANCH_NAME}"
+                // Add your build steps here
             }
+        }
+        stage('Test') {
+            steps {
+                echo "Running tests on branch: ${env.BRANCH_NAME}"
+                // Add your test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying the project from branch: ${env.BRANCH_NAME}"
+                // Add your deployment steps here
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up workspace'
+            cleanWs()
+        }
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
