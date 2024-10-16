@@ -151,12 +151,12 @@ pipeline {
      post {
         success {
             echo 'Build succeeded!'
-            mail to: 'team@example.com',
+            mail to: 'amodh9916883074@gmail.com',
                  subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "The build was successful. Check it at ${env.BUILD_URL}"
         }
         failure {
-            echo 'Build failed!'
+            echo 'amodh9916883074@gmail.com'
             mail to: 'team@example.com',
                  subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
                  body: "The build has failed. Check it at ${env.BUILD_URL}"
