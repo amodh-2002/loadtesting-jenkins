@@ -1,37 +1,62 @@
+// pipeline {
+//     agent any
+
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo "Building the project on branch: ${env.BRANCH_NAME}"
+//                 // Add your build steps here
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo "Running tests on branch: ${env.BRANCH_NAME}"
+//                 // Add your test steps here
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo "Deploying the project from branch: ${env.BRANCH_NAME}"
+//                 // Add your deployment steps here
+//             }
+//         }
+//     }
+
+//     post {
+//         always {
+//             echo 'Cleaning up workspace'
+//             cleanWs()
+//         }
+//         success {
+//             echo 'Pipeline completed successfully!'
+//         }
+//         failure {
+//             echo 'Pipeline failed!'
+//         }
+//     }
+// }
+
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                echo "Building the project on branch: ${env.BRANCH_NAME}"
-                // Add your build steps here
+                echo 'Building project...'
+                // Build steps here
             }
         }
         stage('Test') {
             steps {
-                echo "Running tests on branch: ${env.BRANCH_NAME}"
-                // Add your test steps here
+                echo 'Running tests...'
+                // Test steps here
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deploying the project from branch: ${env.BRANCH_NAME}"
-                // Add your deployment steps here
+                echo 'Deploying project...'
+                // Deployment steps here
             }
         }
     }
-
-    post {
-        always {
-            echo 'Cleaning up workspace'
-            cleanWs()
-        }
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-    }
 }
+
